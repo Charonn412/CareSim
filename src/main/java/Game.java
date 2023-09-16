@@ -36,9 +36,10 @@ public class Game implements Runnable {
             return;
         }
         g = bs.getDrawGraphics();
+        //Clear screen
+        g.clearRect(0, 0, width,height);
         //Draw here!
 
-        g.fillRect(0, 0, width, height);
 
         //End drawing!
         bs.show();
