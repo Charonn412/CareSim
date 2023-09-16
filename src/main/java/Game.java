@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class Game implements Runnable {
 
@@ -13,6 +15,8 @@ public class Game implements Runnable {
     private BufferStrategy bs;
     private Graphics g;
 
+    private BufferedImage testImage;
+
     public Game(String title, int width, int height) {
         this.width = width;
         this.height = height;
@@ -21,9 +25,10 @@ public class Game implements Runnable {
         window = new Window(title, width, height);
     }
 
-    private void init() {
-        window = new Window(title, width, height);
-    }
+//    private void init()  {
+//        window = new Window(title, width, height);
+//        testImage = ImageLoader.loadImage("C:\\Users\\charo\\IdeaProjects\\CareSim2\\res\\textures\\perry.jpg");
+//    }
 
     private void update() {
 
@@ -40,6 +45,7 @@ public class Game implements Runnable {
         g.clearRect(0, 0, width,height);
         //Draw here!
 
+        g.drawImage(testImage, 20, 20, null);
 
         //End drawing!
         bs.show();
